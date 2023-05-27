@@ -1,0 +1,205 @@
+
+# coding: utf-8
+
+# In[ ]:
+
+2-5
+
+
+# In[ ]:
+
+(2-5)**2
+
+
+# In[ ]:
+
+((2-5)**2)**(0.5)
+
+
+# In[ ]:
+
+a = [5,0.75]
+b = [2,0.50]
+
+
+# In[ ]:
+
+((5-2)**2 + (0.75 - 0.50)**2)**0.5
+
+
+# In[ ]:
+
+from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
+
+
+# In[ ]:
+
+knn = KNeighborsClassifier(n_neighbors=3)
+
+
+# In[ ]:
+
+data = pd.read_table('fruit_data_with_colors.txt')
+
+
+# In[ ]:
+
+data
+
+
+# In[ ]:
+
+X = data[['mass','height','width','color_score']]
+y = data['fruit_label']
+
+
+# In[ ]:
+
+X
+
+
+# In[ ]:
+
+y
+
+
+# In[ ]:
+
+from sklearn.model_selection import train_test_split
+
+
+# In[ ]:
+
+X_train, X_test, y_train, y_test = train_test_split(X,y)
+
+
+# In[ ]:
+
+knn.fit(X_train,y_train)
+
+
+# In[ ]:
+
+knn.score(X_test,y_test)
+
+
+# In[ ]:
+
+from sklearn.preprocessing import MinMaxScaler
+
+
+# In[ ]:
+
+mm = MinMaxScaler()
+
+
+# In[ ]:
+
+X_train = mm.fit_transform(X_train)
+
+
+# In[ ]:
+
+X_train
+
+
+# In[ ]:
+
+X_test = mm.transform(X_test)
+
+
+# In[ ]:
+
+X_test
+
+
+# In[ ]:
+
+knn = KNeighborsClassifier(n_neighbors=3)
+
+
+# In[ ]:
+
+knn.fit(X_train,y_train)
+
+
+# In[ ]:
+
+knn.score(X_test,y_test)
+
+
+# In[ ]:
+
+knn.predict(X_test)
+
+
+# In[ ]:
+
+y_test
+
+
+# In[ ]:
+
+from sklearn.neighbors import KNeighborsRegressor
+
+
+# In[ ]:
+
+knn = KNeighborsRegressor(n_neighbors=3)
+
+
+# In[ ]:
+
+from sklearn.datasets import load_boston
+
+
+# In[ ]:
+
+data = load_boston()
+
+
+# In[ ]:
+
+X, y = load_boston(return_X_y=True)
+
+
+# In[ ]:
+
+X.shape
+
+
+# In[ ]:
+
+y.shape
+
+
+# In[ ]:
+
+print(load_boston()['DESCR'])
+
+
+# In[ ]:
+
+from sklearn.model_selection import train_test_split
+
+
+# In[ ]:
+
+X_train, X_test, y_train, y_test = train_test_split(X,y)
+
+
+# In[ ]:
+
+knn.fit(X_train,y_train)
+
+
+# In[ ]:
+
+knn.score(X_test,y_test)
+
+
+# In[ ]:
+
+
+
