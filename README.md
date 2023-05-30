@@ -1,2 +1,2 @@
 # ML-study
-Introduction to Machine Learning
+Introduction to Machine Learning and Data Analysis 
